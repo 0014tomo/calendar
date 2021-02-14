@@ -1,0 +1,24 @@
+<div class="container" style="margin-top: 80px;">
+    <div class="row justify-content-center">
+      <div class="col-md-offset-6 col-md-6 users-new-container bg-light" style="padding: 30px; border-radius: 30px;">
+        <h1 class="text-center text-black">Sign in</h1>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group ">
+              <%= f.label :name,class: 'text-black' %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
+            </div>
+            <div class="form-group ">
+              <%= f.label :email,class: 'text-black' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+            </div>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+            </div>
+            <div class="actions" style="padding:40px;">
+              <%= f.submit "Log in", class: 'btn-block btn-white' %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+</div>

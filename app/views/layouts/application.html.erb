@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calendar</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar fixed-top">
+      <ul class="nav justify-content-end mr-auto ">
+        <li class="nav-item nav-main">
+          <%= link_to"calendar",root_path %> 
+        </li>
+      </ul>
+      <ul class="nav justify-content-end">
+       <% if user_signed_in? %>
+        
+        <li class="nav-item nav-list">
+          <%= link_to"ログアウト",destroy_user_session_path,method: :delete %>
+        </li>
+       <% else %>
+        <li class="nav-item nav-list">
+          <%= link_to"ログイン",new_user_session_path %>
+        </li>
+        <li class="nav-item nav-list">
+          <%= link_to"メンバー登録",new_user_registration_path %>
+        </li>
+       <% end %>
+      </ul>
+    </nav>
+    <%= render 'layouts/flashes' %>
+    <script>
+      $(function(){
+        $(".alert").fadeOut(3000);
+      });
+    </script>
+    <%= yield %>
+  </body>
+</html>

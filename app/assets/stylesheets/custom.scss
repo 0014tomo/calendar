@@ -1,0 +1,24 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('00085.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.top-hero-container {
+  padding-top: 100px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 60px;
+  }
+}
+
+.nav-item {
+    color: white;
+}

@@ -1,0 +1,26 @@
+@import "bootstrap";
+@import "custom";
+ul {
+list-style-type: none;
+}
+
+
+body {
+    padding-top: 60px;
+}
+.flash-msg {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar {
+    margin-bottom: 0;
+    padding :10px 0;
+}
+.nav-main {
+    margin-left: 40px;
+    font-size: 30px;
+    letter-spacing: 0.3em;
+}
+.nav-list {
+    margin-right: 20px;
+}
