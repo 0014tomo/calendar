@@ -1,0 +1,37 @@
+
+<div class="header d-flex" style="margin-top: 30px">
+    <h1 class="display-4" style="color:white; text-shadow:1px 0 5px black;">Customers</h1>
+    <h2 style="margin: 25px 0 0 20px; text-shadow:1px 0 5px black;"><%= link_to "customer_new",new_customer_path, :style=>"color:white" %></h2>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" style="color:white; text-shadow:1px 0 5px black;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">担当を選択 </a>
+        <ul class="dropdown-menu">
+            <% @users.each do |user| %>
+                <li><%= link_to user.name,"/customers/user/#{user.id}", :style=>"color:black" %></li>
+            <% end %>
+            <li><%= link_to "ALL",customers_path, :style=>"color:black" %></li>
+        </ul>      
+    </li>
+</div>
+<div class="container col-12">
+    <div class="d-flex flex-wrap justify-content-center">
+        <% @customers.each do |customer| %>
+            <div class="card border-black mx-3 my-3" style="width: 20rem;">
+                <div class="card-header d-flex" style="padding-bottom: 0;background-color:<%= "#{customer.color}" %>;">
+                    <h5><%= link_to customer.customer_name,root_path, :style=>"color:black" %> </h5>
+                    <% if customer.user_id == current_user.id %>
+                        <p style="margin:5px 0 0 160px;">
+                            <%= link_to "edit",edit_customer_path(customer.id), :style=>"color:black" %>
+                        </p>
+                    <% end %>
+                </div>
+                    <div class="card-body text-black">
+                        <p class="card-text">買付日 : <%= customer.start_time %></p>
+                        <p class="card-text">契約日 : <%= customer.second_time %></p>
+                        <p class="card-text">本審査日 : <%= customer.third_time %></p>
+                        <p class="card-text">金消契約日 : <%= customer.fourth_time %></p>
+                        <p class="card-text">決済日 : <%= customer.end_time %></p>
+                    </div>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -3,40 +3,40 @@
   <head>
     <title>Calendar</title>
     <%= csrf_meta_tags %>
-
+　
+　　
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar fixed-top">
-      <ul class="nav justify-content-end mr-auto ">
-        <li class="nav-item nav-main">
-          <%= link_to"calendar",root_path %> 
+    <nav class="navbar fixed-top" style="background:rgba(153,153,153,0.9);">
+      <ul class="nav mr-auto">
+        <li class="nav-item nav-main text-dark">
+          <%= link_to"Calendar",root_path, :style=>"color:white; text-shadow:1px 0 5px black;" %> 
         </li>
       </ul>
-      <ul class="nav justify-content-end">
+      <ul class="nav justify-content-end" style = "margin-right: 30px;">
        <% if user_signed_in? %>
-        
         <li class="nav-item nav-list">
-          <%= link_to"ログアウト",destroy_user_session_path,method: :delete %>
+          <%= link_to"ログアウト",destroy_user_session_path, method: :delete, :style=>"color:white; text-shadow:1px 0 5px black;" %>
         </li>
        <% else %>
-        <li class="nav-item nav-list">
-          <%= link_to"ログイン",new_user_session_path %>
+        <li class="nav-item nav-list" style = "margin-right: 30px;">
+          <%= link_to"ログイン",new_user_session_path, :style=>"color:white; text-shadow:1px 0 5px black;" %>
         </li>
         <li class="nav-item nav-list">
-          <%= link_to"メンバー登録",new_user_registration_path %>
+          <%= link_to"メンバー登録",new_user_registration_path, :style=>"color:white; text-shadow:1px 0 5px black;" %>
         </li>
        <% end %>
       </ul>
     </nav>
     <%= render 'layouts/flashes' %>
-    <script>
-      $(function(){
-        $(".alert").fadeOut(3000);
-      });
-    </script>
+      <script>
+        $(function(){
+          $(".alert").fadeOut(3000);
+        });
+      </script>
     <%= yield %>
   </body>
 </html>

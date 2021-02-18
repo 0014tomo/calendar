@@ -1,7 +1,8 @@
 body {
+  background-image: url('1920.jpg') ;
   width: 100vw;
   height: 100vh;
-  background-image: url('00085.jpg');
+  padding-top: 64px;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -21,4 +22,28 @@ body {
 
 .nav-item {
     color: white;
+}
+
+.dropdown {
+  list-style: none;
+  margin: 35px 0 0 30px;
+  font-size: 20px;
+}
+
+.dropdown-toggle {
+  color: white;
+  text-shadow: 1px 0 5px
+}
+
+
+.calendar-contents {
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 0.9vw;
+}
+
+.clear {
+  float: none;
 }

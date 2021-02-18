@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="simple-calendar">
+    <div class="calendar-heading d-flex" style="padding: 40px; font-size: 1.2em;">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" style="color:white; text-shadow:1px 0 5px black;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">担当を選択 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <% users.each do |user| %>
+                  <li><%= link_to user.name,"/customers/calendar/#{user.id}", :style=>"color:black" %></li>
+              <% end %>
+              <li><%= link_to "ALL","/customers/calendar", :style=>"color:black" %></li>
+          </ul>
+      </li>
+      <ul style="margin: 10px 0 0 90px;">
+        <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, :style=>"color:white" %>
+        <span class="calendar-title" style="margin: 0 30px; font-size: 1.6em; color:white; text-shadow:1px 0 5px black;"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+        <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, :style=>"color:white" %>
+      </ul>
+    </div>
+  
+    <table class="table table-striped" style="background-color: white; height: 600px;">
+      <thead>
+        <tr>
+          <% date_range.slice(0, 7).each do |day| %>
+            <th><%= t('date.abbr_day_names')[day.wday] %></th>
+          <% end %>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <% date_range.each_slice(7) do |week| %>
+          <tr>
+            <% week.each do |day| %>
+              <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
+                <% else %>
+                  <% passed_block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,32 +1,52 @@
 <div class="top-hero-wrapper text-center">
   <div class="container top-hero-container">
-    <h1 class="text-black">Make you Happy</h1>
-      <h2 class="text-black">～Manipulate time freely～</h2>
-        <div class="card-deck" style="padding-bottom: 50px;">
-          <div class="card">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
-            <div class="card-body">
-              <h5 class="card-title">Carendar</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <div class="card">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
-            <div class="card-body">
-              <h5 class="card-title">Customers</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <div class="card">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
+    <h1 style="color:white; text-shadow:1px 0 5px black;">Schedule and Customer Management</h1>
+      <h2 class="text-white">～have a comfortable work life～</h2>
   </div>
 </div>
+</div>
+ <div class="container-fluid" style="padding-top: 30px;">
+  <div class="row text-center d-flex" style="background-color: orangered; height: 440px; margin-top: 50px;">
+    <div class="container col-sm">
+      <div class="container text-center" style = "background-color: white; border-radius: 50%; margin: 20px auto; width:400px; height:400px;">
+        <div class="" style="margin: 10px;">
+          <h1 style="padding-top:50px";>
+                <%= link_to "Calendar",customers_calendar_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
+              </h1>
+              <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+                <p style="font-size: 20px;">This content allows you to view and share your customers' schedules on your calendar.</p>
+                <p style="font-size: 20px;">Also, depending on the person in charge, the color when displaying the customer changes.</p>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="container col-sm">
+      <div class="container text-center" style = "background-color: white; border-radius: 50%; margin: 20px auto; width:400px; height:400px;">
+        <div class="" style="margin: 10px;">
+          <h1 style="padding-top:50px";>
+                <%= link_to "Customer",customers_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
+              </h1>
+              <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+                <p style="font-size: 20px;">This content allows you to view customers by account.</p>
+                <p style="font-size: 20px;">It is also possible to edit the customer information of the customer in charge.</p>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="container col-sm">
+      <div class="container text-center" style = "background-color: white; border-radius: 50%; margin: 20px auto; width:400px; height:400px;">
+        <div class="" style="margin: 10px;">
+          <h1 style="padding-top:50px";>
+                <%= link_to "Customer",customers_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
+              </h1>
+              <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+                <p style="font-size: 20px;">This content allows you to view customers by account.</p>
+                <p style="font-size: 20px;">It is also possible to edit the customer information of the customer in charge.</p>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    </div>
+  </div>
+  </div>
