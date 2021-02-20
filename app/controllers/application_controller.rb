@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_room
      if session[:room_id] == nil
-       flash[:notice] = "ルームに入室してください。"
+       flash[:alert] = "ルーム入室後、利用可能です。"
        redirect_to root_path
      end
   end

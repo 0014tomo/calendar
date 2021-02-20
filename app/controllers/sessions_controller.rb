@@ -3,10 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    room = Room.find_by(password: params[:session][:password]) 
-    if room.room_name ==  params[:session][:room_name]
+    room = Room.find_by(password: params[:session][:password], room_name: params[:session][:room_name]) 
+    if room
       session[:room_id] = room.id
       redirect_to root_path
+    else
+      flash.now[:alert] = "ルーム名、またはパスワードが違います。"
+      render :new
     end
   end
 

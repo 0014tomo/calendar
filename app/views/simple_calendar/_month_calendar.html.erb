@@ -4,11 +4,12 @@
       <li class="dropdown">
           <a href="#" class="dropdown-toggle" style="color:white; text-shadow:1px 0 5px black;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">担当を選択 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-              <% users.each do |user| %>
-                  <li><%= link_to user.name,"/customers/calendar/#{user.id}", :style=>"color:black" %></li>
-              <% end %>
-              <li><%= link_to "ALL","/customers/calendar", :style=>"color:black" %></li>
-          </ul>
+            <% @users_id.each do |id| %>
+                <% user = User.find_by(id: id) %>
+                    <li><%= link_to user.name,"/customers/calendar/#{user.id}", :style=>"color:black" %></li>
+            <% end %>
+            <li><%= link_to "ALL","/customers/calendar", :style=>"color:black" %></li>
+        </ul>  
       </li>
       <ul style="margin: 10px 0 0 90px;">
         <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, :style=>"color:white" %>

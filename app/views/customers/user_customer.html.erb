@@ -5,11 +5,12 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" style="color:white; text-shadow:1px 0 5px black;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">担当を選択 </a>
         <ul class="dropdown-menu">
-            <% @users.each do |user| %>
-                <li><%= link_to user.name,"/customers/user/#{user.id}", :style=>"color:black" %></li>
+            <% @users_id.each do |id| %>
+                <% user = User.find_by(id: id) %>
+                    <li><%= link_to user.name,"/customers/user/#{user.id}", :style=>"color:black" %></li>
             <% end %>
             <li><%= link_to "ALL",customers_path, :style=>"color:black" %></li>
-        </ul>      
+        </ul>    
     </li>
 </div>
 <div class="container col-12">

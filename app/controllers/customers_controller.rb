@@ -48,11 +48,14 @@ class CustomersController < ApplicationController
   end
   
   def calendar
-    @customers = Customer.all
+    @customer = Customer.where(room_id: session[:room_id])
+    @users_id = @customer.distinct.pluck(:user_id)
   end
   
   def user_calendar
+    @customer = Customer.where(room_id: session[:room_id])
     @customers = Customer.where(user_id: params[:id])
+    @users_id = @customer.distinct.pluck(:user_id)
   end
 
   def destroy
@@ -63,8 +66,9 @@ class CustomersController < ApplicationController
   end
   
   def user_customer
-    @customers = Customer.where(room_id: session[:room_id])
-    @users_id = @customers.distinct.pluck(:user_id)
+    @customer = Customer.where(room_id: session[:room_id])
+    @customers = Customer.where(user_id: params[:id])
+    @users_id = @customer.distinct.pluck(:user_id)
   end
   
   def ensure_correct_user

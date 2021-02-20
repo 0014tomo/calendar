@@ -10,39 +10,69 @@
     <div class="container col-sm">
       <div class="container text-center" style = "background-color: white; border-radius: 50%; margin: 20px auto; width:400px; height:400px;">
         <div class="" style="margin: 10px;">
-          <h1 style="padding-top:50px";>
-                <%= link_to "Calendar",customers_calendar_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
-              </h1>
-              <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
-                <p style="font-size: 20px;">This content allows you to view and share your customers' schedules on your calendar.</p>
-                <p style="font-size: 20px;">Also, depending on the person in charge, the color when displaying the customer changes.</p>
-              </div>
+          <% if user_signed_in? %>
+            <h1 style="padding-top:50px";>
+              <%= link_to "Calendar",customers_calendar_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
+            </h1>
+            <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+              <p style="font-size: 20px;">This content allows you to view and share your customers' schedules on your calendar.</p>
+              <p style="font-size: 20px;">Also, depending on the person in charge, the color when displaying the customer changes.</p>
+            </div>
+          <% else %>
+            <h1 style="padding-top:50px; color:black; text-shadow:1px 0 5px silver;";>
+              Calendar
+            </h1>
+            <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+              <p style="font-size: 20px;">This content allows you to view and share your customers' schedules on your calendar.</p>
+              <p style="font-size: 20px;">Also, depending on the person in charge, the color when displaying the customer changes.</p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="container col-sm">
       <div class="container text-center" style = "background-color: white; border-radius: 50%; margin: 20px auto; width:400px; height:400px;">
         <div class="" style="margin: 10px;">
-          <h1 style="padding-top:50px";>
-                <%= link_to "Customer",customers_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
-              </h1>
-              <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
-                <p style="font-size: 20px;">This content allows you to view customers by account.</p>
-                <p style="font-size: 20px;">It is also possible to edit the customer information of the customer in charge.</p>
-              </div>
+          <% if user_signed_in? %>
+            <h1 style="padding-top:50px";>
+              <%= link_to "Customer",customers_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
+            </h1>
+            <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+              <p style="font-size: 20px;">This content allows you to view customers by account.</p>
+              <p style="font-size: 20px;">It is also possible to edit the customer information of the customer in charge.</p>
+            </div>
+          <% else %>  
+            <h1 style="padding-top:50px; color:black; text-shadow:1px 0 5px silver;";>
+              Customer
+            </h1>
+            <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+              <p style="font-size: 20px;">This content allows you to view and share your customers' schedules on your calendar.</p>
+              <p style="font-size: 20px;">Also, depending on the person in charge, the color when displaying the customer changes.</p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="container col-sm">
       <div class="container text-center" style = "background-color: white; border-radius: 50%; margin: 20px auto; width:400px; height:400px;">
         <div class="" style="margin: 10px;">
-          <h1 style="padding-top:50px";>
-                <%= link_to "Users",users_index_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
-              </h1>
-              <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
-                <p style="font-size: 20px;">In this content, you can see other users who are using the room you are currently in.</p>
-                <p style="font-size: 20px;">The users displayed here are only those who have registered customers.</p>
-              </div>
+          <% if user_signed_in? %>
+            <h1 style="padding-top:50px";>
+              <%= link_to "Users",users_index_path, :style=>"color:black; text-shadow:1px 0 5px silver;" %>
+            </h1>
+            <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+              <p style="font-size: 20px;">In this content, you can see other users who are using the room you are currently in.</p>
+              <p style="font-size: 20px;">The users displayed here are only those who have registered customers.</p>
+            </div>
+          <% else %>
+            <h1 style="padding-top:50px; color:black; text-shadow:1px 0 5px silver;";>
+              User
+            </h1>
+            <div class="explain" style="width:300px; height: 200px; margin: 40px auto;">
+              <p style="font-size: 20px;">This content allows you to view and share your customers' schedules on your calendar.</p>
+              <p style="font-size: 20px;">Also, depending on the person in charge, the color when displaying the customer changes.</p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
