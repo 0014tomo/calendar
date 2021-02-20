@@ -1,0 +1,15 @@
+<div class="header d-flex" style="margin-top: 30px">
+    <h1 class="display-4" style="color:white; text-shadow:1px 0 5px black; margin:10px auto;">Users</h1>
+ </div>
+<div class="container col-12">
+        <div class="d-flex flex-wrap justify-content-center">
+            <% @users_id.each do |id| %>
+                <% user = User.find_by(id: id) %>
+                <div class="card border-black mx-3 my-3" style="width: 20rem;">
+                    <div class="card-header d-flex" style="padding-bottom: 0;" >
+                        <h5 style="margin:0 auto; font-size: 25px"><%= user.name %> </h5>
+                    </div>
+                </div>
+                
+            <% end %>
+        </div>

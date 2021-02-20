@@ -95,6 +95,7 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     puma (3.12.6)
     racc (1.5.2)
@@ -186,6 +187,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mysql2
+  pg
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
   sass-rails (~> 5.0)

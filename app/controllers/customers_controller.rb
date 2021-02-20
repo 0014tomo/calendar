@@ -1,14 +1,16 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_room
+  
   def new
     @customer = Customer.new
     @users = User.all
   end
   
   def index
-    @customers = Customer.all
-    @users = User.all
+    @customers = Customer.where(room_id: session[:room_id])
+    @users_id = @customers.distinct.pluck(:user_id)
   end
   
   def edit
@@ -40,6 +42,7 @@ class CustomersController < ApplicationController
     # 決済日は金消日から14日
     @customer.end_time = @customer.fourth_time + 14.days
     @customer.color = @customer.customer_color
+    @customer.room_id = session[:room_id]
     @customer.save
     redirect_to root_path
   end
@@ -60,8 +63,8 @@ class CustomersController < ApplicationController
   end
   
   def user_customer
-    @customers = Customer.where(user_id: params[:id])
-    @users = User.all
+    @customers = Customer.where(room_id: session[:room_id])
+    @users_id = @customers.distinct.pluck(:user_id)
   end
   
   def ensure_correct_user
@@ -71,6 +74,8 @@ class CustomersController < ApplicationController
       redirect_to(customers_path)
     end
   end
+  
+
   
   private
 

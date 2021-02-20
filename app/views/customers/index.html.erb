@@ -5,7 +5,8 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" style="color:white; text-shadow:1px 0 5px black;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">担当を選択 </a>
             <ul class="dropdown-menu">
-                <% @users.each do |user| %>
+                <% @users_id.each do |id| %>
+                    <% user = User.find_by(id: id) %>
                     <li><%= link_to user.name,"/customers/user/#{user.id}", :style=>"color:black" %></li>
                 <% end %>
                 <li><%= link_to "ALL",customers_path, :style=>"color:black" %></li>
@@ -15,6 +16,7 @@
     <div class="container col-12">
         <div class="d-flex flex-wrap justify-content-center">
             <% @customers.each do |customer| %>
+            <% if session[:room_id] == customer.room_id %>
                 <div class="card border-black mx-3 my-3" style="width: 20rem;">
                     <div class="card-header d-flex" style="padding-bottom: 0; background-color:<%= "#{customer.color}" %>;" >
                         <h5><%= link_to customer.customer_name,customer_path(customer.id), :style=>"color:black" %> </h5>
@@ -33,6 +35,7 @@
                             <p>Memo : <%= customer.content %></p>
                         </div>
                 </div>
+                <% end %>
             <% end %>
         </div>
     </div>

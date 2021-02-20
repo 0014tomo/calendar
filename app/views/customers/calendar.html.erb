@@ -1,9 +1,11 @@
 <div class="container-calendar">
  <%= month_calendar events: @customers do |date, customers| %>
  <%= date.day %>
-    
+ 
+
     <%# 顧客スケジュールの取り出し %>
  <% customers.each do |customer| %>
+  <% if session[:room_id] == customer.room_id %>
  <div class="calendar-contents", style="background-color:<%= "#{customer.color}" %>;" >
   
     <%# 該当する日にちの時のみ顧客名を表示 %>
@@ -29,6 +31,7 @@
    <% end %>
    
  </div>
+ <% end %>
  <% end %>
     
  <% end %>

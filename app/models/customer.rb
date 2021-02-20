@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
+  validates :room_id, presence: true
     
     def customer_color
         if self.user_id == 1
@@ -19,4 +20,6 @@ class Customer < ApplicationRecord
             _color ="#bcddff"
         end
     end
+    
+    
 end
