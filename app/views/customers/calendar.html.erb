@@ -4,35 +4,35 @@
  
 
     <%# 顧客スケジュールの取り出し %>
- <% customers.each do |customer| %>
-  <% if session[:room_id] == customer.room_id %>
- <div class="calendar-contents", style="background-color:<%= "#{customer.color}" %>;" >
-  
-    <%# 該当する日にちの時のみ顧客名を表示 %>
-   <% if customer.start_time == date %>
-   <%= customer.customer_name+"様　買付" %>
+  <% customers.each do |customer| %>
+   <% if session[:room_id] == customer.room_id %>
+    <div class="calendar-contents", style="background-color:<%= "#{customer.color}" %>;" >
    
+      <%# 該当する日にちの時のみ顧客名を表示 %>
+     <% if customer.start_time == date %>
+     <%= customer.customer_name+"様　買付" %>
+     
+     <% end %>
+     
+      <% if customer.second_time == date %>
+     <%= customer.customer_name+"様　契約" %>
+     <% end %>
+    
+      <% if customer.third_time == date %>
+     <%= customer.customer_name+"様　本審査" %>
+     <% end %>
+     
+      <% if customer.fourth_time == date %>
+     <%= customer.customer_name+"様　金消契約" %>
+     <% end %>
+     
+      <% if customer.end_time == date %>
+     <%= customer.customer_name+"様　決済" %>
+     <% end %>
+     
+    </div>
    <% end %>
-   
-    <% if customer.second_time == date %>
-   <%= customer.customer_name+"様　契約" %>
-   <% end %>
-  
-    <% if customer.third_time == date %>
-   <%= customer.customer_name+"様　本審査" %>
-   <% end %>
-   
-    <% if customer.fourth_time == date %>
-   <%= customer.customer_name+"様　金消契約" %>
-   <% end %>
-   
-    <% if customer.end_time == date %>
-   <%= customer.customer_name+"様　決済" %>
-   <% end %>
-   
- </div>
- <% end %>
- <% end %>
+  <% end %>
     
  <% end %>
 </div>

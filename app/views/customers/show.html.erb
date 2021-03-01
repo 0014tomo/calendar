@@ -1,21 +1,21 @@
 <div class="container">
-<div class="card text-center">
-  <div class="card-header">
-    <h2 class="header-title">
-    <%= @customer.customer_name %>
-    </h2>
-    <p style="margin: 10px 0 0 0; font-size: 20px;">
-        担当 : <%= @user.name %>
-    </p>
+  <div class="card text-center">
+    <div class="card-header">
+      <h2 class="header-title">
+      <%= @customer.customer_name %>
+      </h2>
+      <p style="margin: 10px 0 0 0; font-size: 20px;">
+          担当 : <%= @user.name %>
+      </p>
+    </div>
+    <div class="card-body" style="font-size: 25px;">
+      <p class="card-text">Customer's name : <%= @customer.customer_name %> </p>
+      <p class="card-text">Customer's address : <%= @customer.address %> </p>
+      <p class="card-text">Customer's phone number : <%= @customer.phone %> </p>
+      <p class="card-text">Customer's memo : <%= @customer.content %> </p>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
   </div>
-  <div class="card-body" style="font-size: 25px;">
-    <p class="card-text">Customer's name : <%= @customer.customer_name %> </p>
-    <p class="card-text">Customer's address : <%= @customer.address %> </p>
-    <p class="card-text">Customer's phone number : <%= @customer.phone %> </p>
-    <p class="card-text">Customer's memo : <%= @customer.content %> </p>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
 </div>

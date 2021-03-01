@@ -1,6 +1,9 @@
 class Customer < ApplicationRecord
   validates :room_id, presence: true
-    
+  belongs_to :user
+  belongs_to :room
+
+# ユーザー登録と同時に専用の色を振り分け
     def customer_color
         if self.user_id == 1
             _color = "#bcffff"
