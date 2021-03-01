@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
       <div class="col-md-offset-6 col-md-6 users-new-container bg-light" style="padding: 30px; border-radius: 30px;">
         <h1 class="text-center text-black">New room</h1>
-          <%= form_for "#" do |f| %>
+          <%= form_for @room do |f| %>
             <div class="form-group ">
               <%= f.label :room_name,class: 'text-black' %>
               <%= f.text_field :room_name, autofocus: true, autocomplete: "room_name", class: 'form-control' %>

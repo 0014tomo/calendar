@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
       <div class="col-md-offset-6 col-md-6 users-new-container bg-light" style="padding: 30px; border-radius: 30px;">
         <h1 class="text-center text-black">Sign up</h1>
-          <%= form_for "#" do |f| %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <div class="form-group ">
               <%= f.label :name,class: 'text-black' %>
               <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
